@@ -1,7 +1,11 @@
 ---
 const { translations, isRTL } = Astro.props;
-const otherLangPath = isRTL ? "/" : "/fa";
-const langPath = isRTL ? "/fa" : "/";
+import config from "../constants/config";
+import En from "./icons/En.astro";
+import Fa from "./icons/Fa.astro";
+import Github from "./icons/Github.astro";
+const otherLangPath = isRTL ? "/" + config.name : `/${config.name}/fa`;
+const langPath = isRTL ? `/${config.name}/fa` : "/" + config.name;
 ---
 
 <header
@@ -14,13 +18,13 @@ const langPath = isRTL ? "/fa" : "/";
         class:list={[isRTL ? "space-x-reverse" : ""]}
       >
         <img
-          src="/favicon.svg"
+          src={"/" + config.name + "/favicon.svg"}
           alt="Shecan DNS Logo"
           class="h-8 w-8 animate-spin"
         />
-        <span class="text-xl font-bold text-primary"
-          >{translations.nav.title}</span
-        >
+        <span class="text-xl font-bold text-primary">
+          {translations.nav.title}
+        </span>
       </div>
     </a>
 
@@ -37,15 +41,11 @@ const langPath = isRTL ? "/fa" : "/";
           class="text-gray-700 hover:text-primary transition-colors"
           target="_blank"
         >
-          {translations.nav.github}
+          <Github />
         </a>
       </nav>
-
-      <a
-        href={otherLangPath}
-        class="px-3 py-1 border bg-gray-100 text-white rounded-md text-sm"
-      >
-        {isRTL ? "🇺🇸" : "🇮🇷"}
+      <a href={otherLangPath} title={translations.nav.switchLang}>
+        {isRTL ? <En /> : <Fa />}
       </a>
     </div>
   </div>

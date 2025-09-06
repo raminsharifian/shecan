@@ -1,14 +1,13 @@
 ---
 const { translations, isRTL } = Astro.props;
+import config from "../constants/config";
 ---
 
 <section class="pt-32 pb-20 px-4">
   <div class="container mx-auto max-w-4xl text-center">
     <div class="animate-float mb-12">
-      <div
-        class="w-35 h-35 mx-auto bg-gradient-to-br from-purple-400 to-primary rounded-2xl flex items-center justify-center shadow-xl logo"
-      >
-        <img src="/favicon.svg" alt="Shecan DNS" class="w-25 h-25 text-white" />
+      <div class="w-45 h-45 mx-auto flex items-center justify-center">
+        <img src={"/" + config.name + "/favicon.svg"} alt="Shecan DNS" />
       </div>
     </div>
 
@@ -16,22 +15,22 @@ const { translations, isRTL } = Astro.props;
       {translations.hero.title}
     </h1>
 
-    <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+    <p class="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
       {translations.hero.subtitle}
     </p>
 
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
       <a
         href="https://raw.githubusercontent.com/raminsharifian/shecan.ir-linux.binding/main/src/shecan-dns.sh"
         download="shecan-dns.sh"
-        class="bg-primary hover:bg-opacity-90 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        class="bg-primary text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform shadow-lg text-xl hover:shadow-2xl hover:scale-105"
         id="download"
       >
         {translations.hero.download}
       </a>
     </div>
 
-    <div class="bg-gray-50 rounded-2xl p-6">
+    <div class="rounded-2xl p-6 code-card">
       <p class="text-gray-600 mb-4">{translations.hero.command}</p>
       <div class="bg-gray-900 rounded-xl p-4 command-area">
         <code class="text-green-400 font-mono text-sm">
@@ -45,15 +44,21 @@ const { translations, isRTL } = Astro.props;
 </section>
 
 <style>
+  section {
+    min-height: 90vh;
+  }
   .animate-float {
     animation: float 6s ease-in-out infinite;
-  }
-  .logo {
-    backdrop-filter: blur(0.25rem) brightness(200%);
   }
   .command-area {
     white-space: nowrap;
     overflow: hidden;
     overflow-x: auto;
+  }
+  .code-card {
+    backdrop-filter: blur(0.5rem) contrast(90%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 </style>

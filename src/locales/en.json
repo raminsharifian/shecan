@@ -5,7 +5,7 @@
   },
   "nav": {
     "title": "Shecan Config",
-    "github": "GitHub"
+    "switchLang": "Switch language to Farsi"
   },
   "hero": {
     "title": "Shecan DNS Config for Linux",
@@ -15,6 +15,6 @@
   },
   "footer": {
     "made": "Built with",
-    "love": "for the Iranian programming community"
+    "love": "for the fa-IR community"
   }
 }

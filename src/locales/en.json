@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Shecan DNS - Linux Configuration",
+    "description": "Simple bash script to configure Shecan DNS on Linux systems"
+  },
+  "nav": {
+    "title": "Shecan Config",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title": "Shecan DNS Config for Linux",
+    "subtitle": "One-command setup for better internet access",
+    "download": "Download Script",
+    "command": "Or run directly:"
+  },
+  "footer": {
+    "made": "Built with",
+    "love": "for the Iranian programming community"
+  }
+}

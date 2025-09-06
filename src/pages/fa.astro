@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+
+import fa from "../locales/fa.json";
+---
+
+<Layout
+  title={fa.meta.title}
+  description={fa.meta.description}
+  dir="rtl"
+  lang="fa"
+>
+  <Header lang="fa" translations={fa} isRTL={true} />
+  <Hero translations={fa} isRTL={true} />
+  <Footer translations={fa} />
+</Layout>
